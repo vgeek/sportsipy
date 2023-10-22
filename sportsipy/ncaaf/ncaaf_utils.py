@@ -4,7 +4,7 @@ from .constants import (DEFENSIVE_STATS_URL,
                         OFFENSIVE_STATS_URL,
                         PARSING_SCHEME,
                         SEASON_PAGE_URL)
-
+import time
 
 def _add_stats_data(teams_list, team_data_dict):
     """
