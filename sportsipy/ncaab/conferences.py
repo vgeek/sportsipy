@@ -3,7 +3,7 @@ import re
 from urllib.error import HTTPError
 from .. import utils
 from .constants import CONFERENCE_URL, CONFERENCES_URL
-
+import time
 
 class Conference:
     """
@@ -243,6 +243,7 @@ class Conferences:
             raise ValueError(output)
         conferences = page('table#conference-summary tbody tr').items()
         for conference in conferences:
+            time.sleep(10)
             conference_abbreviation = self._get_conference_id(conference)
             conference_name = conference('td[data-stat="conf_name"]').text()
             teams_dict = Conference(conference_abbreviation, year).teams

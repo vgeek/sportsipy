@@ -138,6 +138,7 @@ class Team:
         self._opp_free_throws_per_field_goal_attempt = None
 
         if team_name:
+            team_name = team_name.replace('/MEN','')
             team_data = self._retrieve_team_data(year, team_name, basic_stats,
                                                  basic_opp_stats, adv_stats,
                                                  adv_opp_stats)
