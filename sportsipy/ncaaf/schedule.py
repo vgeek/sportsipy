@@ -202,7 +202,7 @@ class Game:
         was played. If the game doesn't include a time, the default value of
         '00:00' will be used.
         """
-        if self._time == '' or not self._time:
+        if self._time == '' or not self._time or 'TBD' in self._time:
             return datetime.strptime(self._date, '%b %d, %Y')
         date_string = '%s %s' % (self._date, self._time)
         return datetime.strptime(date_string, '%b %d, %Y %I:%M %p')
