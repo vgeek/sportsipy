@@ -661,7 +661,7 @@ class Boxscore:
             if short_field in BOXSCORE_ELEMENT_INDEX.keys():
                 index = BOXSCORE_ELEMENT_INDEX[short_field]
                 if self.away_minutes_played > 240:
-                    ots_played = (self.away_minutes_played - 240) / 5 / 5
+                    ots_played = int((self.away_minutes_played - 240) / 5 / 5)
                     index += ots_played
                 secondary_index = 1
             if short_field == 'home_record':
@@ -1301,7 +1301,6 @@ class Boxscore:
         by the home team.
         """
         try:
-            print('home fg 1301: ' + str(self.home_field_goals))
             result = self.home_field_goals - self.home_three_point_field_goals
         except TypeError:
             result = None
