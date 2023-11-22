@@ -661,7 +661,8 @@ class Boxscore:
             if short_field in BOXSCORE_ELEMENT_INDEX.keys():
                 index = BOXSCORE_ELEMENT_INDEX[short_field]
                 if self.away_minutes_played > 240:
-                    index += 1
+                    ots_played = (self.away_minutes_played - 240) / 5 / 5
+                    index += ots_played
                 secondary_index = 1
             if short_field == 'home_record':
                 strip = True
