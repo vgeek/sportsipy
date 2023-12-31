@@ -8,6 +8,7 @@ from urllib.error import HTTPError
 from .. import utils
 from .constants import NATIONALITY, PLAYER_SCHEME, PLAYER_URL, ROSTER_URL
 from .player import AbstractPlayer
+import time
 
 
 def _cleanup(prop):
@@ -235,6 +236,7 @@ class Player(AbstractPlayer):
         """
         url = self._build_url()
         try:
+            time.sleep(10)
             url_data = pq(url)
         except (HTTPError, ParserError):
             return None
