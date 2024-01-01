@@ -1,3 +1,5 @@
+import time
+
 import pandas as pd
 import re
 from functools import wraps
@@ -170,6 +172,7 @@ class Player(AbstractPlayer):
         """
         url = self._build_url()
         try:
+            time.sleep(8)
             url_data = pq(url)
         except HTTPError:
             return None
