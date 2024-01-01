@@ -1,3 +1,5 @@
+import time
+
 import pandas as pd
 import re
 from functools import wraps
@@ -145,6 +147,7 @@ class Player(AbstractPlayer):
         """
         url = PLAYER_URL % self._player_id
         try:
+            time.sleep(8)
             url_data = pq(url)
         except (HTTPError, ParserError):
             return None
