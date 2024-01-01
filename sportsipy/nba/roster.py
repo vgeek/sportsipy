@@ -236,7 +236,7 @@ class Player(AbstractPlayer):
         """
         url = self._build_url()
         try:
-            time.sleep(10)
+            time.sleep(8)
             url_data = pq(url)
         except (HTTPError, ParserError):
             return None
