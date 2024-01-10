@@ -359,9 +359,10 @@ class Player(AbstractPlayer):
         """
         for span in player_info('span').items():
             if 'class="f-i' in str(span):
-                nationality = span.text()
-                nationality = NATIONALITY[nationality]
+
                 try:
+                    nationality = span.text()
+                    nationality = NATIONALITY[nationality]
                     setattr(self, '_nationality', nationality)
                 except:
                     break
