@@ -361,7 +361,10 @@ class Player(AbstractPlayer):
             if 'class="f-i' in str(span):
                 nationality = span.text()
                 nationality = NATIONALITY[nationality]
-                setattr(self, '_nationality', nationality)
+                try:
+                    setattr(self, '_nationality', nationality)
+                except:
+                    break
                 break
 
     def _parse_player_information(self, player_info):
