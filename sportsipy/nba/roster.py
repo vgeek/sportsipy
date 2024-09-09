@@ -235,6 +235,8 @@ class Player(AbstractPlayer):
             the comment tags removed.
         """
         url = self._build_url()
+        if url is None:
+            return None
         try:
             time.sleep(8)
             url_data = pq(url)
